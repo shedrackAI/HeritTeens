@@ -23,9 +23,11 @@ function Nav() {
   }
 
   return (
-   <nav className='flex justify-between items-center p-5'>
-       <FaArrowLeft onClick={backwardOnBoarding}/>
-   </nav>
+    <div className='flex justify-center'>
+      <nav className='flex justify-between items-center p-5 w-full'>
+          <FaArrowLeft onClick={backwardOnBoarding}/>
+      </nav>
+    </div>
   )
 }
 

@@ -15,7 +15,7 @@ export const Gender = () => {
     }
 
     return (
-        <div className='flex flex-col gap-9 h-[200px]'>
+        <div className='flex flex-col gap-9 h-[200px] font-poppins'>
             <h1 className='text-center font-semibold text-xl'>Gender</h1>
             <div className='flex w-full gap-9'>
                 <div className="text-center flex flex-col justify-center items-center gap-2">   
@@ -23,6 +23,7 @@ export const Gender = () => {
                         <Image 
                         src={male}
                         alt="image of a man"
+                        priority
                         />
                     </div>
                     <h3 className="text-md font-medium text-gray-400">male</h3>
@@ -33,6 +34,7 @@ export const Gender = () => {
                         <Image 
                          src={female}
                          alt="image of a woman"
+                         priority
                         />
                     </div>
                     <h3 className="text-md font-medium text-gray-400">female</h3>
@@ -50,7 +52,7 @@ export const Name = () => {
     } 
 
     return (
-        <div className='flex flex-col gap-9 items-center justify-center h-[200px]'>
+        <div className='flex flex-col gap-9 items-center justify-center h-[200px] font-poppins'>
             <h1 className='text-center font-semibold text-xl'>What's your name</h1>
             <div className='flex flex-col w-full gap-9 justify-center items-center h-24'>
                 <form className='flex flex-col gap-3 justify-center items-center'>
@@ -75,7 +77,7 @@ export const Member = () => {
     }
 
     return (
-        <div className='flex flex-col gap-9 items-center h-[200px]'>
+        <div className='flex flex-col gap-9 items-center h-[200px] font-poppins'>
             <h1 className='text-center font-semibold text-xl'>Are you a member of Heritage</h1>
             <div className='flex w-full gap-9 justify-center items-center'>
                 <div className="text-center flex flex-col justify-center items-center gap-2">   
@@ -83,6 +85,7 @@ export const Member = () => {
                         <Image 
                         src={group}
                         alt="image of a man"
+                        priority
                         />
                     </div>
                     <h3 className="text-md font-medium text-gray-400">Yes</h3>
@@ -93,6 +96,7 @@ export const Member = () => {
                         <Image 
                         src={notMember}
                         alt="image of a man"
+                        priority
                         />
                     </div>
                     <h3 className="text-md font-medium text-gray-400">No</h3>
@@ -109,13 +113,15 @@ export const Department = () => {
         setOnBoarding(4);
     } 
     return (
-        <div className='flex flex-col gap-9 items-center h-[200px]'>
+        <div className='flex flex-col gap-9 items-center h-[200px] font-poppins'>
             <h1 className='text-center font-semibold text-xl'>Are you in any department</h1>
             <div className='flex w-full gap-9 justify-center items-center'>
-                    <select className="w-full p-2 bg-gray-200 rounded-md">
-                        <option className="w-10 bg-red-300">hellol</option>
-                        <option>good</option>
-                        <option>mumu</option>
+                    <select className="w-full overflow-hidden p-2 bg-gray-200 rounded-md text-base font-medium text-gray-500">
+                            <option  value={'none'} className="w-3 absolute">None</option>
+                            <option value={'drama'} className="w-3">Drama</option>
+                            <option value={'media'} className="w-3">Media</option>
+                            <option value={'music'} className="w-3">Music</option>
+                            <option value={'hoat'} className="w-3">Host</option>
                     </select>
             </div>
             <button onClick={setUserDepartment} className="bg-green-700 text-white font-medium px-5 py-1 rounded-md cursor-pointer" type="">Done</button>
