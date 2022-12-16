@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { useContext, useEffect, useState } from 'react'
+
 import Welcome from '../components/Welcome'
 import { AppContext } from '../contexts/AppContext';
 import OnBoarding from './auth/onBoarding';
+import Dashboard from './dashboard';
 
 export default function Home() {
   const { isLoading } = useContext(AppContext);
@@ -16,11 +18,12 @@ export default function Home() {
       </Head>
 
       <main className='w-full h-full'>
-        {isLoading ? (
+        {/* {isLoading ? (
           <Welcome />
         ):(
           <OnBoarding />
-        )}
+        )} */}
+        <Dashboard />
 
       </main>
     </div>

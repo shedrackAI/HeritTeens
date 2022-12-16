@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { FaArrowLeft }  from 'react-icons/fa'
 import { AppContext } from '../contexts/AppContext';
 
-function Nav() {
+function Header() {
   const { onBoarding, setOnBoarding } = useContext(AppContext);
 
   const backwardOnBoarding = () => {
@@ -24,11 +24,11 @@ function Nav() {
 
   return (
     <div className='flex justify-center'>
-      <nav className='flex justify-between items-center p-5 w-full'>
+      <nav className='flex justify-between items-center p-5 flex-1 max-w-4xl'>
           <FaArrowLeft onClick={backwardOnBoarding}/>
       </nav>
     </div>
   )
 }
 
-export default Nav
+export default Header

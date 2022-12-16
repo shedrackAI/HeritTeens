@@ -1,10 +1,16 @@
-import Nav from "./Nav";
+import Header from "./Header";
+import Navbar from "./Navbar";
 
 function Layout({ children }) {
     return (
-        <div className="w-screen h-screen flex flex-col justify-center px-7">
-            <Nav />
-            <main className="w-full h-full">{ children }</main>
+        <div className="w-screen h-screen flex flex-col items-stretch justify-center">
+            <Header />
+            <main className="flex-1 flex justify-center w-full h-full">
+                <div className="flex-1 flex max-w-4xl h-full">
+                    { children }
+                </div>
+            </main>
+            <Navbar />
         </div>
     )
 }
