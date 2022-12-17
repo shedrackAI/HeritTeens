@@ -6,6 +6,19 @@ export const AppProvider = ({ children }) => {
     const [ onBoarding, setOnBoarding ] = useState(1);
     const [ isLoading, setIsLoading ] = useState(true);
 
+    // User details
+    const [ userFullname, setUserFullname ] = useState('');
+    const [ userGender, setUserGender ] = useState('');
+    const [ userDepartment, setUserDepartment ] = useState('');
+    const [ userIsMember, setUserIsMember ] = useState('');
+
+    const user = {
+      userFullname: userFullname,
+      userDepartment: userDepartment,
+      userGender: userGender,
+      userIsMember: userIsMember 
+    }
+
   // Remove welcome page after 11s
   useEffect(() => {
     setTimeout(() => {
@@ -36,9 +49,10 @@ export const AppProvider = ({ children }) => {
             onBoarding,
             setOnBoardingStageForward,
             onBoarding,
-            setOnBoarding
+            setOnBoarding,
+            user
         }}>
             {children}
         </AppContext.Provider>
-    )
+    );
 }

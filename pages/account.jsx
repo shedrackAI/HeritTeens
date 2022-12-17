@@ -1,4 +1,7 @@
 import React from 'react'
+import Image from 'next/image'
+
+import profileImage from '../public/images/profile.jpg'
 
 //Icons
 import { BiGridAlt, BiNotification, BiAddToQueue } from 'react-icons/bi'
@@ -17,7 +20,8 @@ function Account() {
         {/* First Div for profile picture and details */}
         <div className='w-full flex flex-col'>
             <div className='text-center flex flex-col items-center'>
-                <div className='w-[100px] h-[100px] rounded-full bg-slate-900'></div>
+                <div className='w-[100px] h-[100px] rounded-full bg-slate-900'>
+                </div>
                 <h1 className='font-medium'>Shedrack Aigbe</h1>
             </div>
 

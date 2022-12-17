@@ -8,7 +8,7 @@ function ProfileNavigator({ children }) {
     const [ profileNav, setProfileNav ] = useState('s');
 
     const profileNavBtn= {
-        active: 'flex flex-1 justify-center items-center border-b-4 border-gray-500',
+        active: 'flex flex-1 justify-center items-center border-b-2 border-gray-500',
         unActive: 'flex flex-1 justify-center items-center'
     };
 

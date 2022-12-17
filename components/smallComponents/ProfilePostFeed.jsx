@@ -2,9 +2,11 @@ import React from 'react'
 
 function ProfilePostFeed() {
   return (
-    <div className='bg-red-200 overflow-y-scroll h-40'>
-        <div className='h-[400px] '>
-
+    <div className='overflow-y-scroll overflow-x-hidden h-96'>
+        <div className='h-full flex justify-center items-center text-lg font-bold text-gray-200'>
+            <h1>
+                Post coming soon
+            </h1>
         </div>
     </div>
   )
