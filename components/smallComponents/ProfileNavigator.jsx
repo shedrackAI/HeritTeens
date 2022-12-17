@@ -5,7 +5,7 @@ import { BiGridAlt, BiNotification, BiAddToQueue } from 'react-icons/bi'
 import { BsGrid  } from 'react-icons/bs'
 
 function ProfileNavigator({ children }) {
-    const [ profileNav, setProfileNav ] = useState('s');
+    const [ profileNav, setProfileNav ] = useState('feed');
 
     const profileNavBtn= {
         active: 'flex flex-1 justify-center items-center border-b-2 border-gray-500',

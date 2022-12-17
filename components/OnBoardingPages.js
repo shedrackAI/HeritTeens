@@ -107,11 +107,12 @@ export const Member = () => {
 }
 
 export const Department = () => {
-    const { setOnBoarding, setCompleteOnBoarding, completeOnBoarding, setIsLoading } = useContext(AppContext);
+    const { setOnBoarding, setCompleteOnBoarding, completeOnBoarding, setIsLoading, setHeader } = useContext(AppContext);
 
     const setUserDepartment = () => {
         setOnBoarding(4);
         setCompleteOnBoarding(true);
+        setHeader(false);
     } 
     return (
         <div className={completeOnBoarding  ? 'hidden' : 'flex flex-col gap-9 items-center h-[200px] font-poppins'}>

@@ -11,11 +11,12 @@ export function WelcomeAnimation({ style }) {
 }
 
 function Dashboard() {
-  const { welcomeAnimation, setWelcomeAnimation, setIsLoading } = useContext(AppContext);
+  const { welcomeAnimation, setWelcomeAnimation, setIsLoading, setHeader } = useContext(AppContext);
 
   useEffect(() => {
     setTimeout(() => {
       setWelcomeAnimation(false);
+      setHeader(true)
     }, 7000);
   }, []);
 

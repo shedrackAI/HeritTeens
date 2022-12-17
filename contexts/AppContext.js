@@ -3,7 +3,7 @@ import React, { useState, useEffect, createContext } from 'react'
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-    const [ headre, setHeader ] = useState(false);
+    const [ header, setHeader ] = useState(false);
     const [ onBoarding, setOnBoarding ] = useState(1);
     const [ completeOnBoarding, setCompleteOnBoarding ] = useState(false);
     const [ isLoading, setIsLoading ] = useState(true);
@@ -57,7 +57,7 @@ export const AppProvider = ({ children }) => {
             setCompleteOnBoarding,
             welcomeAnimation,
             setWelcomeAnimation,
-            headre,
+            header,
             setHeader
         }}>
             {children}
