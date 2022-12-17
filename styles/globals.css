@@ -52,7 +52,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 4px;
   background-color: rgba(231, 229, 229, 0.87);
 }
 

@@ -7,8 +7,8 @@ function Navbar() {
   return (
     <div className='flex p-3 border-t-2 justify-center'>
         <div className='flex justify-between flex-1 max-w-2xl'>
-            <Link href={"/dashboard"}> <HiOutlineHome size={25}/> </Link>
-            <Link href={"#"}> <HiOutlineBookOpen size={25}/> </Link>
+            <Link aria-hidden href={"/dashboard"}> <HiOutlineHome size={25}/> </Link>
+            <Link aria-hidden href={"#"}> <HiOutlineBookOpen size={25}/> </Link>
             <Link href={"/account"}> <HiOutlineUser size={25}/> </Link>
         </div>
     </div>
