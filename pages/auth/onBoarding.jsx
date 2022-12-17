@@ -5,10 +5,10 @@ import { AppContext } from '../../contexts/AppContext'
 import { Department, Gender, Member, Name } from '../../components/OnBoardingPages'
 
 function OnBoarding() {
-    const { setOnBoardingStageForwar, onBoarding, setOnBoarding } = useContext(AppContext);
+    const { setOnBoardingStageForwar, onBoarding, setOnBoarding, completeOnBoarding } = useContext(AppContext);
 
   return (
-    <div className='h-full flex items-center justify-center font-poppins flex-col relative'>
+    <div className={completeOnBoarding  ? 'hidden' : 'h-full flex items-center justify-center font-poppins flex-col relative'}>
             {onBoarding === 1 && (
                 <Gender />
             )}

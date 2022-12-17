@@ -107,14 +107,15 @@ export const Member = () => {
 }
 
 export const Department = () => {
-    const { setOnBoarding } = useContext(AppContext);
+    const { setOnBoarding, setCompleteOnBoarding, completeOnBoarding, setIsLoading } = useContext(AppContext);
 
     const setUserDepartment = () => {
         setOnBoarding(4);
+        setCompleteOnBoarding(true);
     } 
     return (
-        <div className='flex flex-col gap-9 items-center h-[200px] font-poppins'>
-            <h1 className='text-center font-semibold text-xl'>Are you in any department</h1>
+        <div className={completeOnBoarding  ? 'hidden' : 'flex flex-col gap-9 items-center h-[200px] font-poppins'}>
+            <h1 className='text-center font-semibold text-xl'>Are you in any de partment</h1>
             <div className='flex w-full gap-9 justify-center items-center'>
                     <select className="w-full overflow-hidden p-2 bg-gray-200 rounded-md text-base font-medium text-gray-500">
                             <option  value={'none'} className="w-3 absolute">None</option>

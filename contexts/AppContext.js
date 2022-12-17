@@ -3,8 +3,11 @@ import React, { useState, useEffect, createContext } from 'react'
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
+    const [ headre, setHeader ] = useState(false);
     const [ onBoarding, setOnBoarding ] = useState(1);
+    const [ completeOnBoarding, setCompleteOnBoarding ] = useState(false);
     const [ isLoading, setIsLoading ] = useState(true);
+    const [ welcomeAnimation, setWelcomeAnimation ] = useState(true)
 
     // User details
     const [ userFullname, setUserFullname ] = useState('');
@@ -22,7 +25,8 @@ export const AppProvider = ({ children }) => {
   // Remove welcome page after 11s
   useEffect(() => {
     setTimeout(() => {
-      setIsLoading(false)
+      setHeader(true);
+      setIsLoading(false);
     }, 11000);
   }, []);
 
@@ -37,8 +41,6 @@ export const AppProvider = ({ children }) => {
         case 2:
             setOnBoarding(3)
             break;
-        default:
-            break;
     } 
   }
 
@@ -50,7 +52,13 @@ export const AppProvider = ({ children }) => {
             setOnBoardingStageForward,
             onBoarding,
             setOnBoarding,
-            user
+            user,
+            completeOnBoarding,
+            setCompleteOnBoarding,
+            welcomeAnimation,
+            setWelcomeAnimation,
+            headre,
+            setHeader
         }}>
             {children}
         </AppContext.Provider>

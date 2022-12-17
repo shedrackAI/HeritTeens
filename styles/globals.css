@@ -74,6 +74,29 @@
   }
 }
 
-.re {
-  
+.welcome_animation {
+  animation: welcomeAnimation 3s cubic-bezier(0.39, 0.575, 0.565, 1) 4s;
+  background-color: rgb(26, 143, 26);
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes welcomeAnimation {
+  0% {
+    width: 0;
+   height: 0;
+  }
+  50% {
+    width: 1200px;
+    height: 1200px;
+    background-color: white;
+  }
+  750% {
+    background-color: white;
+  }
+  100% {
+    width: 1200px;
+    height: 1200px;
+    background-color: white;
+  }
 }

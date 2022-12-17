@@ -7,7 +7,7 @@ import OnBoarding from './auth/onBoarding';
 import Dashboard from './dashboard';
 
 export default function Home() {
-  const { isLoading } = useContext(AppContext);
+  const { isLoading, completeOnBoarding } = useContext(AppContext);
 
   return (
     <div className='w-full h-full'>
@@ -18,12 +18,17 @@ export default function Home() {
       </Head>
 
       <main className='w-full h-full'>
-        {/* {isLoading ? (
+        {isLoading ? (
           <Welcome />
         ):(
           <OnBoarding />
-        )} */}
-        <Dashboard />
+        )}
+
+        <div className={completeOnBoarding  ? 'w-full h-full overflow-hidden' : 'hidden'}>
+          {completeOnBoarding && (
+            <Dashboard />
+          )}
+        </div>
 
       </main>
     </div>
