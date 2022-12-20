@@ -3,8 +3,10 @@ import { useContext } from 'react';
 import { FaArrowLeft }  from 'react-icons/fa'
 import { AppContext } from '../contexts/AppContext';
 
+import { AiOutlineSetting } from 'react-icons/ai'
+
 function Header() {
-  const { onBoarding, setOnBoarding } = useContext(AppContext);
+  const { onBoarding, setOnBoarding, welcomeAnimation, currentPage } = useContext(AppContext);
 
   const backwardOnBoarding = () => {
     switch (onBoarding) {
@@ -23,9 +25,29 @@ function Header() {
   }
 
   return (
-    <div className='flex justify-center'>
-      <nav className='flex justify-between items-center p-5 flex-1 max-w-4xl'>
-          <FaArrowLeft onClick={backwardOnBoarding}/>
+    <div className='flex justify-center border-b-2'>
+      <nav className='flex justify-between items-center px-5 flex-1 max-w-4xl h-12'>
+        {welcomeAnimation &&  (
+          <FaArrowLeft onClick={backwardOnBoarding}/> 
+        )}
+            
+        {currentPage === "dashboard" ? (
+          <div className='w-full h-full flex justify-center items-center'>
+            <h3 className='font-medium text-lg'>home</h3>
+          </div>
+        ):''}
+        {currentPage === "profile" ? (
+          <div className='w-full h-full flex justify-center items-center relative'>
+            <h3 className='font-medium text-lg'>profile</h3>
+            <AiOutlineSetting size={25} className='absolute right-0 cursor-pointer'/>
+          </div>
+        ):''}
+        {currentPage === "quiz" ? (
+          <div className='w-full h-full flex justify-center items-center'>
+            <FaArrowLeft className='absolute left-0 cursor-pointer ml-5'/> 
+            <h3 className='font-medium text-lg'>quiz</h3>
+          </div>
+        ):''}
       </nav>
     </div>
   )

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 
@@ -8,10 +9,16 @@ import group from '../public/images/group.png'
 import notMember from '../public/images/person.png'
 
 export const Gender = () => {
-    const { setOnBoarding } = useContext(AppContext);
+    const { setOnBoarding, setUser } = useContext(AppContext);
     
-    const setUserGender = () => {
+    const setUserGenderMale = () => {
         setOnBoarding(2);
+        setUser.setUserGender("Male");
+    }
+
+    const setUserGenderFemale = () => {
+        setOnBoarding(2);
+        setUser.setUserGender("Female");
     }
 
     return (
@@ -19,7 +26,7 @@ export const Gender = () => {
             <h1 className='text-center font-semibold text-xl'>Gender</h1>
             <div className='flex w-full gap-9'>
                 <div className="text-center flex flex-col justify-center items-center gap-2">   
-                    <div onClick={setUserGender} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100'>
+                    <div onClick={setUserGenderMale} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100'>
                         <Image 
                         src={male}
                         alt="image of a man"
@@ -30,7 +37,7 @@ export const Gender = () => {
                 </div>
 
                 <div className="text-center flex flex-col justify-center items-center gap-2">   
-                    <div onClick={setUserGender} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100'>
+                    <div onClick={setUserGenderFemale} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100'>
                         <Image 
                          src={female}
                          alt="image of a woman"
@@ -45,7 +52,7 @@ export const Gender = () => {
 }
 
 export const Name = () => {
-    const { setOnBoarding } = useContext(AppContext);
+    const { setOnBoarding, setUser } = useContext(AppContext);
 
     const setUserName = () => {
         setOnBoarding(3);
@@ -57,11 +64,12 @@ export const Name = () => {
             <div className='flex flex-col w-full gap-9 justify-center items-center h-24'>
                 <form className='flex flex-col gap-3 justify-center items-center'>
                     <input
+                    onChange={(e) => setUser.setUserFullname(e.target.value)}
                     placeholder="Enter your fullname..."
                     name="name" 
                     className="border px-3 py-2 rounded-md w-[200px] xs:w-[240px] font-medium placeholder:text-gray-300 text-sm"
                     />
-                    <button onClick={setUserName} className="bg-green-700 text-white font-medium px-5 py-1 rounded-md cursor-pointer" type="">Next</button>
+                    <button onClick={setUserName} className="bg-green-700 text-white font-medium px-5 py-1 rounded-lg cursor-pointer" type="">Next</button>
                 </form>
                 
             </div>
@@ -70,10 +78,15 @@ export const Name = () => {
 }
 
 export const Member = () => {
-    const { setOnBoarding } = useContext(AppContext);
+    const { setOnBoarding, setUser } = useContext(AppContext);
 
-    const setUserMembership = () => {
+    const setUserMembershipYes = () => {
         setOnBoarding(4);
+        setUser.setUserIsMember("Yes");
+    }
+    const setUserMembershipNo = () => {
+        setOnBoarding(4);
+        setUser.setUserIsMember("No");
     }
 
     return (
@@ -81,7 +94,7 @@ export const Member = () => {
             <h1 className='text-center font-semibold text-xl'>Are you a member of Heritage</h1>
             <div className='flex w-full gap-9 justify-center items-center'>
                 <div className="text-center flex flex-col justify-center items-center gap-2">   
-                    <div onClick={setUserMembership} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100 flex justify-center items-center'>
+                    <div onClick={setUserMembershipYes} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100 flex justify-center items-center'>
                         <Image 
                         src={group}
                         alt="image of a man"
@@ -92,7 +105,7 @@ export const Member = () => {
                 </div>
 
                 <div className="text-center flex flex-col justify-center items-center gap-2">   
-                    <div onClick={setUserMembership} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100 flex justify-center items-center'>
+                    <div onClick={setUserMembershipNo} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100 flex justify-center items-center'>
                         <Image 
                         src={notMember}
                         alt="image of a man"
@@ -126,7 +139,9 @@ export const Department = () => {
                             <option value={'hoat'} className="w-3">Host</option>
                     </select>
             </div>
-            <button onClick={setUserDepartment} className="bg-green-700 text-white font-medium px-5 py-1 rounded-md cursor-pointer" type="">Done</button>
+            <Link href={'/dashboard'}>
+                <button onClick={setUserDepartment} className="bg-green-700 text-white font-medium px-5 py-1 rounded-lg cursor-pointer" type="">Done</button>
+            </Link>
         </div>
-    )
-}
+    );
+}; 

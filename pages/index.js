@@ -3,8 +3,8 @@ import { useContext, useEffect, useState } from 'react'
 
 import Welcome from '../components/Welcome'
 import { AppContext } from '../contexts/AppContext';
-import OnBoarding from './auth/onBoarding';
 import Dashboard from './dashboard';
+import Register from './register';
 
 export default function Home() {
   const { isLoading, completeOnBoarding } = useContext(AppContext);
@@ -21,14 +21,14 @@ export default function Home() {
         {isLoading ? (
           <Welcome />
         ):(
-          <OnBoarding />
+          <Register />
         )}
 
-        <div className={completeOnBoarding  ? 'w-full h-full overflow-hidden' : 'hidden'}>
+        {/* <div className={completeOnBoarding  ? 'w-full h-full overflow-hidden' : 'hidden'}>
           {completeOnBoarding && (
             <Dashboard />
           )}
-        </div>
+        </div> */}
 
       </main>
     </div>

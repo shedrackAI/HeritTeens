@@ -10,11 +10,15 @@ module.exports = {
         poppins: "Poppins",
       },
       screens: {
-        "xs": "314px"
+        "xs": "314px",
+        "small-phone": '412px'
       },
       colors: {
-        primary: ""
-      }
+        primary: "#FFA14A",
+        secondary: "#4c5870",
+        neutral: "#4c58708a",
+        grayBg: "#959eae0e"
+      },
     },
   },
   plugins: [],

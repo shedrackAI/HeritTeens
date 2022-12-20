@@ -4,6 +4,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
     const [ header, setHeader ] = useState(false);
+    const [ currentPage, setCurrentPage ] = useState(false);
     const [ onBoarding, setOnBoarding ] = useState(1);
     const [ completeOnBoarding, setCompleteOnBoarding ] = useState(false);
     const [ isLoading, setIsLoading ] = useState(true);
@@ -22,10 +23,16 @@ export const AppProvider = ({ children }) => {
       userIsMember: userIsMember 
     }
 
+    const setUser = {
+      setUserFullname,
+      setUserGender,
+      setUserDepartment,
+      setUserIsMember 
+    }
+
   // Remove welcome page after 11s
   useEffect(() => {
     setTimeout(() => {
-      setHeader(true);
       setIsLoading(false);
     }, 11000);
   }, []);
@@ -53,12 +60,15 @@ export const AppProvider = ({ children }) => {
             onBoarding,
             setOnBoarding,
             user,
+            setUser,
             completeOnBoarding,
             setCompleteOnBoarding,
             welcomeAnimation,
             setWelcomeAnimation,
             header,
-            setHeader
+            setHeader,
+            currentPage,
+            setCurrentPage
         }}>
             {children}
         </AppContext.Provider>
