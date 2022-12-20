@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import profileImg from '../../public/images/profile.jpg'
 
@@ -10,6 +10,7 @@ function ProfilePicture({round}) {
         src={profileImg}
         className={`object-cover ${round}`}
         layout='responsive'
+        alt='Profile image'
       />
     </div>
   )

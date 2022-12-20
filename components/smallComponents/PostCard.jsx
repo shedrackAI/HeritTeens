@@ -60,7 +60,7 @@ function PostCard({image}) {
                 <Image 
                  src={image}
                  className={`object-cover`}
-                 layout='responsive'
+                 alt='Image'
                 />
             </div>
         </div>

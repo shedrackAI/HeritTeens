@@ -11,19 +11,19 @@ function UserDetails() {
         <div className='flex flex-wrap flex-1 bg-gray-50 drop-shadow max-w-xl rounded-xl'>
             <div className='flex flex-col gap-2 p-3'>
                 <h2 className='font-normal text-gray-500 flex gap-2'>
-                    <HiUser size={19}/>
+                    <HiUser aria-hidden='true' size={19}/>
                     <span className='font-medium text-gray-700 text-sm'> Drama</span>
                 </h2>
                 <h2 className='font-normal text-gray-500 flex gap-2'>
-                    <HiHome size={19}/>
+                    <HiHome aria-hidden='true' size={19}/>
                     <span className='font-medium text-gray-700 text-sm'> {user.userGender}</span>
                 </h2>
                 <h2 className='font-normal text-gray-500 flex gap-2'>
-                    <HiBookOpen size={19}/>
+                    <HiBookOpen aria-hidden='true' size={19}/>
                     <span className='font-medium text-gray-700 text-sm'> HillTop</span>
                 </h2>
                 <h2 className='font-normal text-gray-500 flex gap-2'>
-                    <HiBookOpen size={19}/>
+                    <HiBookOpen aria-hidden='true' size={19}/>
                     <span className='font-medium text-gray-700 text-sm'>{user.userIsMember}</span>
                 </h2>
             </div>

@@ -13,8 +13,8 @@ import ProfileNavigator from '../components/smallComponents/ProfileNavigator'
 import ProfilePostFeed from '../components/smallComponents/ProfilePostFeed'
 import UserDetails from '../components/smallComponents/UserDetails'
 import ProfilePicture from '../components/smallComponents/ProfilePicture'
-import Friends from './friends'
 import { AppContext } from '../contexts/AppContext'
+import Friends from './friends'
 
 function Account() {
   const { user, currentPage } = useContext(AppContext);

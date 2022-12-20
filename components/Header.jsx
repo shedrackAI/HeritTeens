@@ -28,7 +28,7 @@ function Header() {
     <div className='flex justify-center border-b-2'>
       <nav className='flex justify-between items-center px-5 flex-1 max-w-4xl h-12'>
         {welcomeAnimation &&  (
-          <FaArrowLeft onClick={backwardOnBoarding}/> 
+          <FaArrowLeft aria-hidden='true' onClick={backwardOnBoarding}/> 
         )}
             
         {currentPage === "dashboard" ? (
@@ -39,13 +39,19 @@ function Header() {
         {currentPage === "profile" ? (
           <div className='w-full h-full flex justify-center items-center relative'>
             <h3 className='font-medium text-lg'>profile</h3>
-            <AiOutlineSetting size={25} className='absolute right-0 cursor-pointer'/>
+            <AiOutlineSetting aria-hidden='true' size={25} className='absolute right-0 cursor-pointer'/>
           </div>
         ):''}
         {currentPage === "quiz" ? (
           <div className='w-full h-full flex justify-center items-center'>
-            <FaArrowLeft className='absolute left-0 cursor-pointer ml-5'/> 
+            <FaArrowLeft aria-hidden='true' className='absolute left-0 cursor-pointer ml-5'/> 
             <h3 className='font-medium text-lg'>quiz</h3>
+          </div>
+        ):''}
+        {currentPage === "friends" ? (
+          <div className='w-full h-full flex justify-center items-center'>
+            <FaArrowLeft aria-hidden='true'  className='absolute left-0 cursor-pointer ml-5'/> 
+            <h3 className='font-medium text-lg'>friends</h3>
           </div>
         ):''}
       </nav>
