@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
     const [ header, setHeader ] = useState(false);
-    const [ currentPage, setCurrentPage ] = useState(false);
+    const [ currentPage, setCurrentPage ] = useState('');
     const [ onBoarding, setOnBoarding ] = useState(1);
     const [ completeOnBoarding, setCompleteOnBoarding ] = useState(false);
     const [ isLoading, setIsLoading ] = useState(true);
@@ -35,7 +35,7 @@ export const AppProvider = ({ children }) => {
     setTimeout(() => {
       setIsLoading(false);
     }, 11000);
-  }, []);
+  },[]);
 
   const setOnBoardingStageForward = () => {
     switch (onBoarding) {

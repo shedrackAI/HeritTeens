@@ -3,10 +3,10 @@ import { useContext } from 'react';
 import { FaArrowLeft }  from 'react-icons/fa'
 import { AppContext } from '../contexts/AppContext';
 
-import { AiOutlineSetting } from 'react-icons/ai'
+import { RiSettings2Line } from 'react-icons/ri'
 
 function Header() {
-  const { onBoarding, setOnBoarding, welcomeAnimation, currentPage } = useContext(AppContext);
+  const { onBoarding, setOnBoarding, welcomeAnimation, currentPage, setCurrentPage } = useContext(AppContext);
 
   const backwardOnBoarding = () => {
     switch (onBoarding) {
@@ -39,7 +39,7 @@ function Header() {
         {currentPage === "profile" ? (
           <div className='w-full h-full flex justify-center items-center relative'>
             <h3 className='font-medium text-lg'>profile</h3>
-            <AiOutlineSetting aria-hidden='true' size={25} className='absolute right-0 cursor-pointer'/>
+            <RiSettings2Line aria-hidden='true' size={25} className='absolute right-0 cursor-pointer'/>
           </div>
         ):''}
         {currentPage === "quiz" ? (
@@ -50,7 +50,9 @@ function Header() {
         ):''}
         {currentPage === "friends" ? (
           <div className='w-full h-full flex justify-center items-center'>
-            <FaArrowLeft aria-hidden='true'  className='absolute left-0 cursor-pointer ml-5'/> 
+            <Link href={'/account'} className='absolute left-0 cursor-pointer ml-5'>
+              <FaArrowLeft aria-hidden='true' onClick={() => setCurrentPage('profile')}/> 
+            </Link>
             <h3 className='font-medium text-lg'>friends</h3>
           </div>
         ):''}

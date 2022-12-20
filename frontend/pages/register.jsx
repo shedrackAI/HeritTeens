@@ -7,14 +7,22 @@ function Register() {
 
   return (
     <div className='h-full flex justify-center items-center'>
-        <div className='flex-1 flex flex-col items-center max-w-[200px] px-9'>
-            <button onClick={() => setHeader(true)} className='w-full p-2 rounded-lg bg-green-700 text-white font-medium text-lg cursor-pointer'>
-                <Link href={'/auth/onBoarding'}>Sign Up</Link>
+        <div className='flex-1 flex flex-col items-center max-w-[300px] px-9'>
+          
+          <Link href={'/auth/onBoarding'} className='w-full p-2 rounded-lg bg-green-700 text-white font-medium text-lg cursor-pointer'>
+            <button onClick={() => setHeader(true)} className='w-full'>
+                Sign Up
             </button>
-            <h3 className='py-1 text-gray-300 text-sm'>OR</h3>
-            <button className='w-full p-2 rounded-lg bg-green-700 text-white font-medium text-lg cursor-pointer'>
-                <Link href={'/auth/onBoarding'}>Login</Link>
+          </Link>
+
+          <h3 className='py-1 text-gray-300 text-sm'>OR</h3>
+          
+          <Link href={'/auth/onBoarding'} className='w-full p-2 rounded-lg bg-green-700 text-white font-medium text-lg cursor-pointer'>
+            <button onClick={() => setHeader(true)} className='w-full'>
+                Login
             </button>
+          </Link>
+
         </div>
     </div>
   )

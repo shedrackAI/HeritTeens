@@ -20,9 +20,8 @@ function Account() {
   const { user, currentPage } = useContext(AppContext);
 
   return (
-    <div className='flex flex-col items-center h-full w-full font-poppins pt-3 overflow-y-scroll'>
+    <div className='flex flex-col items-center h-full w-full font-poppins pt-3 px-3 overflow-y-scroll'>
       
-      {currentPage === "profile" ? (
         <div>
           {/* First Div for profile picture and details */}
           <div className='w-full flex flex-col'>
@@ -45,13 +44,6 @@ function Account() {
               <ProfilePostFeed />
           </ProfileNavigator>
         </div>
-      ):""}
-
-      {currentPage === "profile" ? (
-        <Friends />
-      ):""}
-
-      
     </div>     
   )
 }

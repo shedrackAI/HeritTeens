@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 
-import { HiHome, HiBookOpen, HiUser } from 'react-icons/hi2'
+import { HiOutlineUserGroup, HiBookOpen, HiUser } from 'react-icons/hi2'
+import { BsGenderAmbiguous } from 'react-icons/bs'
+import { ImTree } from 'react-icons/im'
 import { AppContext } from '../../contexts/AppContext';
 
 function UserDetails() {
@@ -11,15 +13,15 @@ function UserDetails() {
         <div className='flex flex-wrap flex-1 bg-gray-50 drop-shadow max-w-xl rounded-xl'>
             <div className='flex flex-col gap-2 p-3'>
                 <h2 className='font-normal text-gray-500 flex gap-2'>
-                    <HiUser aria-hidden='true' size={19}/>
+                    <HiOutlineUserGroup aria-hidden='true' size={19}/>
                     <span className='font-medium text-gray-700 text-sm'> Drama</span>
                 </h2>
                 <h2 className='font-normal text-gray-500 flex gap-2'>
-                    <HiHome aria-hidden='true' size={19}/>
+                    <BsGenderAmbiguous aria-hidden='true' size={19}/>
                     <span className='font-medium text-gray-700 text-sm'> {user.userGender}</span>
                 </h2>
                 <h2 className='font-normal text-gray-500 flex gap-2'>
-                    <HiBookOpen aria-hidden='true' size={19}/>
+                    <ImTree  aria-hidden='true' size={19}/>
                     <span className='font-medium text-gray-700 text-sm'> HillTop</span>
                 </h2>
                 <h2 className='font-normal text-gray-500 flex gap-2'>
