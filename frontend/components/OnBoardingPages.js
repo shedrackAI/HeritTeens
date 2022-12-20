@@ -60,17 +60,17 @@ export const Name = () => {
 
     return (
         <div className='flex flex-col gap-9 items-center justify-center h-[200px] font-poppins'>
-            <h1 className='text-center font-semibold text-xl'>What's your name</h1>
+            <h1 className='text-center font-semibold text-xl'>What your name</h1>
             <div className='flex flex-col w-full gap-9 justify-center items-center h-24'>
-                <form className='flex flex-col gap-3 justify-center items-center'>
+                {/* <form className='flex flex-col gap-3 justify-center items-center'>
                     <input
                     onChange={(e) => setUser.setUserFullname(e.target.value)}
                     placeholder="Enter your fullname..."
                     name="name" 
                     className="border px-3 py-2 rounded-md w-[200px] xs:w-[240px] font-medium placeholder:text-gray-300 text-sm"
                     />
-                    <button onClick={setUserName} className="bg-green-700 text-white font-medium px-5 py-1 rounded-lg cursor-pointer" type="">Next</button>
-                </form>
+                    <button onClick={setUserName} className="bg-green-700 text-white font-medium px-5 py-1 rounded-lg cursor-pointer" type="submit" >Next</button>
+                </form> */}
                 
             </div>
         </div>
