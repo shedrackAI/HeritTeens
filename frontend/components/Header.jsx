@@ -9,7 +9,14 @@ import { BsChatFill, BsChatLeftQuote }  from 'react-icons/bs'
 import { RiSettings2Line, RiChatSmile3Line } from 'react-icons/ri'
 
 function Header() {
-  const { onBoarding, setOnBoarding, welcomeAnimation, currentPage, setCurrentPage } = useContext(AppContext);
+  const { 
+    onBoarding, 
+    setOnBoarding, 
+    welcomeAnimation, 
+    currentPage, 
+    setCurrentPage,
+    setBottomPopup
+  } = useContext(AppContext);
 
   const backwardOnBoarding = () => {
     switch (onBoarding) {
@@ -43,7 +50,7 @@ function Header() {
         {currentPage === "profile" ? (
           <div className='w-full h-full flex justify-center items-center relative'>
             <h3 className='font-medium text-lg'>profile</h3>
-            <RiSettings2Line aria-hidden='true' size={25} className='absolute right-0 cursor-pointer'/>
+            <RiSettings2Line onClick={() => setBottomPopup('settings')} aria-hidden='true' size={25} className='absolute right-0 cursor-pointer'/>
           </div>
         ):''}
         {currentPage === "games" ? (

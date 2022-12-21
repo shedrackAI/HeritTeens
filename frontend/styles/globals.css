@@ -8,6 +8,17 @@
   margin: 0;
 }
 
+.setting {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.setting_container {
+ background-color: rgba(0, 0, 0, 0.445);
+}
+
 @font-face {
   font-family: poppins;
   src: url('../public/fonts/Poppins-ExtraLight.ttf');

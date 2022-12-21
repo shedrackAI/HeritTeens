@@ -8,7 +8,8 @@ export const AppProvider = ({ children }) => {
     const [ onBoarding, setOnBoarding ] = useState(1);
     const [ completeOnBoarding, setCompleteOnBoarding ] = useState(false);
     const [ isLoading, setIsLoading ] = useState(true);
-    const [ welcomeAnimation, setWelcomeAnimation ] = useState(true)
+    const [ welcomeAnimation, setWelcomeAnimation ] = useState(true);
+    const [ bottomPopup, setBottomPopup ] = useState('');
 
     // User details
     const [ userFullname, setUserFullname ] = useState('');
@@ -68,7 +69,9 @@ export const AppProvider = ({ children }) => {
             header,
             setHeader,
             currentPage,
-            setCurrentPage
+            setCurrentPage,
+            bottomPopup,
+            setBottomPopup,
         }}>
             {children}
         </AppContext.Provider>
