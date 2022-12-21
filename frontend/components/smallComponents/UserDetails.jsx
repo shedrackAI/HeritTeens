@@ -25,8 +25,7 @@ function UserDetails() {
                     <span className='font-medium text-gray-700 text-sm'> HillTop</span>
                 </h2>
                 <h2 className='font-normal text-gray-500 flex space-x-2'>
-                    <HiBookOpen aria-hidden='true' size={19}/>
-                    <span className='font-medium text-gray-700 text-sm'>{user.userIsMember}</span>
+                    <span className='font-medium text-gray-700 text-sm'> <span className='text-gray-500'>Member:</span> {user.userIsMember}</span>
                 </h2>
             </div>
             {/* Level container */}
@@ -36,7 +35,7 @@ function UserDetails() {
             </div>
             {/* Bio details container */}
             <div className='flex-1 flex max-w-xl flex-col items-center p-3'>
-                <p className='text-[12px]'>Hi my name is shedrack from hilltop branch</p>
+                <p className='text-[12px]'>Hi my name is shedrack i'm from hilltop branch</p>
             </div>
         </div>
     </div>
