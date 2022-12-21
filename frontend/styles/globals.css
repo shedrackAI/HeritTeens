@@ -6,7 +6,6 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 @font-face {
@@ -79,6 +78,7 @@
   background-color: rgb(26, 143, 26);
   position: absolute;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 @keyframes welcomeAnimation {

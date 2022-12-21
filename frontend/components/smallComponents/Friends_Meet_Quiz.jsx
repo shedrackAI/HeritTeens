@@ -7,7 +7,7 @@ function Friends_Meet_Quiz() {
 
   return (
     <div className='w-full flex justify-center mt-6'>
-        <div className='flex justify-center gap-10 flex-1 max-w-xl'>
+        <div className='flex justify-center space-x-10 flex-1 max-w-xl'>
             <Link href={'/friends'} className='text-center flex-1 cursor-pointer' onClick={() => setCurrentPage('friends')}>
                     <h1 className='font-bold'>Friends</h1>
                     <p className='font-normal text-gray-600'>12k</p>

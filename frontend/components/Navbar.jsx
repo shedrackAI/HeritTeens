@@ -9,7 +9,7 @@ function Navbar() {
 
   return (
     <div className='flex p-3 justify-center w-full bg-white'>
-        <div className='flex justify-between flex-1 max-w-2xl'>
+        <div className='flex justify-between flex-1 max-w-[550px]'>
             <Link href={"/dashboard"} onClick={() => setCurrentPage('dashboard')}> <HiOutlineHome aria-hidden='true' size={25}/> </Link>
             <Link href={"/quiz"} onClick={() => setCurrentPage('quiz')}> <IoGameControllerOutline aria-hidden='true'size={25}/> </Link>
             <Link href={"/account"} onClick={() => setCurrentPage('profile')}> <HiOutlineUser aria-hidden='true' size={25}/> </Link>

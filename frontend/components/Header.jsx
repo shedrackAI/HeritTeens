@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { useContext } from 'react';
-import { FaArrowLeft }  from 'react-icons/fa'
+
 import { AppContext } from '../contexts/AppContext';
 
-import { RiSettings2Line } from 'react-icons/ri'
+//Icons
+import { FaArrowLeft }  from 'react-icons/fa'
+import { BsChatFill, BsChatLeftQuote }  from 'react-icons/bs'
+import { RiSettings2Line, RiChatSmile3Line } from 'react-icons/ri'
 
 function Header() {
   const { onBoarding, setOnBoarding, welcomeAnimation, currentPage, setCurrentPage } = useContext(AppContext);
@@ -25,15 +28,16 @@ function Header() {
   }
 
   return (
-    <div className='flex justify-center border-b-2'>
+    <div className='flex justify-center max-w-[550px] w-full'>
       <nav className='flex justify-between items-center px-5 flex-1 max-w-4xl h-12'>
         {welcomeAnimation &&  (
           <FaArrowLeft aria-hidden='true' onClick={backwardOnBoarding}/> 
         )}
             
         {currentPage === "dashboard" ? (
-          <div className='w-full h-full flex justify-center items-center'>
-            <h3 className='font-medium text-lg'>home</h3>
+          <div className='w-full h-full flex justify-between items-center'>
+            <h3 className='font-bold  text-lg'>Heritteens</h3>
+            <RiChatSmile3Line  size={25}/>
           </div>
         ):''}
         {currentPage === "profile" ? (

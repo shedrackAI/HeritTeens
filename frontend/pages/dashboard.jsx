@@ -25,7 +25,7 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className='flex flex-col items-center w-full h-full relative  overflow-y-scroll'>
+    <div className='flex flex-col items-center w-full h-full relative  overflow-y-scroll overflow-x-hidden'>
       <WelcomeAnimation style={welcomeAnimation ? 'w-full h-full flex justify-center items-center relative' : "hidden"} />
       {!welcomeAnimation && (
         <div className='flex-1 flex flex-col items-center py-3 w-full h-auto'> 

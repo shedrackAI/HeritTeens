@@ -26,11 +26,11 @@ function PostCard({image}) {
 
 
   return (
-    <div className='p-4 bg-white mb-3 flex-1 max-w-[550px] min-w-[100px] flex flex-col gap-4'>
-        <div className='flex items-center flex-1'>
-            <div className='xs:w-11 w-9'><ProfilePicture round={"rounded-full"}/></div>
-            <div className='flex-1 pl-5'>
-                <h1 className='font-semibold text-base text-[#4c5870]'>Aigbe shedrack</h1>
+    <div className='py-4 bg-white mb-3 flex-1 max-w-[550px] min-w-[100px] sp flex flex-col space-y-3'>
+        <div className='flex items-center flex-1 px-3'>
+            <div className='xs:w-9 w-7'><ProfilePicture round={"rounded-full"}/></div>
+            <div className='flex-1 pl-2'>
+                <h1 className='font-bold text-[13px] text-[#4c5870]'>Aigbe shedrack</h1>
                 <h4 className='font-medium text-[#4c58708a] text-[12px]'>Just Now</h4>
             </div>
             <div className='relative max-w-[330px] flex flex-col items-end'>
@@ -49,7 +49,7 @@ function PostCard({image}) {
                 }
             </div>
         </div>
-        <div>
+        <div className='px-3'>
             <h2 className='font-medium text-[#4c5870] text-[14px]'>
                 Aorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Sunt eligendi blanditiis, modi sed dicta facilis laborum iure.
@@ -64,19 +64,19 @@ function PostCard({image}) {
                 />
             </div>
         </div>
-        <div className='list-none flex flex-1 text-secondary'>
-            <div className='flex gap-2'>
-                <li className='flex items-center gap-2 font-medium'><RiHeart2Line size={23}/></li>
-                <li className='flex items-center justify-center gap-2 font-medium'><AiOutlineComment size={23}/></li>
-                <li className='flex items-center gap-2 font-medium'><RiShareForwardLine size={23}/></li>
+        <div className='list-none flex flex-1 text-secondary px-3'>
+            <div className='flex space-x-2'>
+                <li className='flex items-center font-medium'><RiHeart2Line size={23}/></li>
+                <li className='flex items-center justify-center font-medium'><AiOutlineComment size={23}/></li>
+                <li className='flex items-center font-medium'><RiShareForwardLine size={23}/></li>
             </div>
-            <div className='flex gap-4 font-medium text-gray-400 small-phone:text-[14px] text-[10px] flex-1 justify-end'>
+            <div className='flex space-x-4 font-medium text-gray-400 small-phone:text-[14px] text-[10px] flex-1 justify-end'>
                 <h1> 3 Comments</h1>
                 <h1> 13 Shares</h1>
             </div>
         </div>
 
-        <div className='flex items-center'>
+        <div className='flex items-center px-3'>
             <div className='flex flex-1'>
                 <div className='w-5 h-5 rounded-full bg-gray-800'></div>
                 <div className='w-5 h-5 rounded-full bg-gray-700 relative -left-1'></div>
@@ -86,12 +86,12 @@ function PostCard({image}) {
             
         </div>
 
-        <div>
-            <div className='flex gap-4 items-center'>
+        <div className='px-3'>
+            <div className='flex items-center space-x-1'>
                 <div className='w-10 hidden small-phone:block'>
                     <ProfilePicture round={'rounded-full'}/>
                 </div>
-                <div className='flex h-full flex-1 bg-grayBg rounded-lg px-3 py-2 text-secondary gap-3'>
+                <div className='flex h-full flex-1 bg-grayBg rounded-lg px-3 py-2 text-secondary'>
                     <input className='flex flex-1 bg-transparent min-w-[2px]' type="text" placeholder='Write a comment...'/>
                     {/* <RiFileGifLine size={20}/>
                     <HiOutlinePhotograph size={20}/>

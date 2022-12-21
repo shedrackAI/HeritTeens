@@ -22,10 +22,10 @@ export const Gender = () => {
     }
 
     return (
-        <div className='flex flex-col gap-9 h-[200px] font-poppins'>
+        <div className='flex flex-col space-y-9 h-[200px] font-poppins'>
             <h1 className='text-center font-semibold text-xl'>Gender</h1>
-            <div className='flex w-full gap-9'>
-                <div className="text-center flex flex-col justify-center items-center gap-2">   
+            <div className='flex w-full space-x-9'>
+                <div className="text-center flex flex-col justify-center items-center space-y-2">   
                     <div onClick={setUserGenderMale} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100'>
                         <Image 
                         src={male}
@@ -36,7 +36,7 @@ export const Gender = () => {
                     <h3 className="text-md font-medium text-gray-400">male</h3>
                 </div>
 
-                <div className="text-center flex flex-col justify-center items-center gap-2">   
+                <div className="text-center flex flex-col justify-center items-center space-y-2">   
                     <div onClick={setUserGenderFemale} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100'>
                         <Image 
                          src={female}
@@ -59,10 +59,10 @@ export const Name = () => {
     } 
 
     return (
-        <div className='flex flex-col gap-9 items-center justify-center h-[200px] font-poppins'>
+        <div className='flex flex-col space-y-9 items-center justify-center h-[200px] font-poppins'>
             <h1 className='text-center font-semibold text-xl'>What your name</h1>
-            <div className='flex flex-col w-full gap-9 justify-center items-center h-24'>
-                <form action="#" method="POST" className='flex flex-col gap-3 justify-center items-center'>
+            <div className='flex flex-col w-full space-y-9 justify-center items-center h-24'>
+                <form action="#" method="POST" className='flex flex-col space-y-3 justify-center items-center'>
                     <input
                     onChange={(e) => setUser.setUserFullname(e.target.value)}
                     placeholder="Enter your fullname..."
@@ -89,10 +89,10 @@ export const Member = () => {
     }
 
     return (
-        <div className='flex flex-col gap-9 items-center h-[200px] font-poppins'>
+        <div className='flex flex-col space-y-9 items-center h-[200px] font-poppins'>
             <h1 className='text-center font-semibold text-xl'>Are you a member of Heritage</h1>
-            <div className='flex w-full gap-9 justify-center items-center'>
-                <div className="text-center flex flex-col justify-center items-center gap-2">   
+            <div className='flex w-full space-x-9 justify-center items-center'>
+                <div className="text-center flex flex-col justify-center items-center space-y-2">   
                     <div onClick={setUserMembershipYes} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100 flex justify-center items-center'>
                         <Image 
                         src={group}
@@ -103,7 +103,7 @@ export const Member = () => {
                     <h3 className="text-md font-medium text-gray-400">Yes</h3>
                 </div>
 
-                <div className="text-center flex flex-col justify-center items-center gap-2">   
+                <div className="text-center flex flex-col justify-center items-center space-y-2">   
                     <div onClick={setUserMembershipNo} className='w-24 h-24 bg-white rounded-lg shadow-md shadow-green-100 flex justify-center items-center'>
                         <Image 
                         src={notMember}
@@ -127,9 +127,9 @@ export const Department = () => {
         setHeader(false);
     } 
     return (
-        <div className={completeOnBoarding  ? 'hidden' : 'flex flex-col gap-9 items-center h-[200px] font-poppins'}>
+        <div className={completeOnBoarding  ? 'hidden' : 'flex flex-col space-y-9 items-center h-[200px] font-poppins'}>
             <h1 className='text-center font-semibold text-xl'>Are you in any de partment</h1>
-            <div className='flex w-full gap-9 justify-center items-center'>
+            <div className='flex w-full space-y-9 justify-center items-center'>
                     <select className="w-full overflow-hidden p-2 bg-gray-200 rounded-md text-base font-medium text-gray-500">
                             <option  value={'none'} className="w-3 absolute">None</option>
                             <option value={'drama'} className="w-3">Drama</option>
