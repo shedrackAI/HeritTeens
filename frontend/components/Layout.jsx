@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 
 import { FaPlus } from 'react-icons/fa'
 import { BsEmojiWink } from 'react-icons/bs'
+import Settings from "./Settings";
 
 function Layout({ children }) {
     const { header, welcomeAnimation } = useContext(AppContext);
@@ -20,6 +21,7 @@ function Layout({ children }) {
             <main className="flex-1 flex justify-center w-full h-full overflow-y-scroll relative">
                 <div className="flex-1 flex justify-center max-w-4xl h-full relative overflow-hidden">
                     { children }
+                    <Settings />
                     <div className="w-11 h-11 grid place-items-center cursor-pointer absolute right-2 bottom-10 rounded-full bg-white drop-shadow-lg text-green-400"> <BsEmojiWink aria-hidden='true' size={20}/> </div>
                 </div>
             </main>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { AppContext } from "../contexts/AppContext";
 
 import male from '../public/images/man.png'
@@ -119,9 +119,13 @@ export const Member = () => {
 }
 
 export const Department = () => {
-    const { setOnBoarding, setCompleteOnBoarding, completeOnBoarding, setIsLoading, setHeader } = useContext(AppContext);
+    const { setOnBoarding, setCompleteOnBoarding, completeOnBoarding, setUser, setHeader } = useContext(AppContext);
 
-    const setUserDepartment = () => {
+    const option = useRef()
+
+    const userDepartment = () => {
+        let optionsValue = option.current;
+        setUser.setUserDepartment(optionsValue.value)
         setOnBoarding(4);
         setCompleteOnBoarding(true);
         setHeader(false);
@@ -130,16 +134,16 @@ export const Department = () => {
         <div className={completeOnBoarding  ? 'hidden' : 'flex flex-col space-y-9 items-center h-[200px] font-poppins'}>
             <h1 className='text-center font-semibold text-xl'>Are you in any de partment</h1>
             <div className='flex w-full space-y-9 justify-center items-center'>
-                    <select className="w-full overflow-hidden p-2 bg-gray-200 rounded-md text-base font-medium text-gray-500">
-                            <option  value={'none'} className="w-3 absolute">None</option>
-                            <option value={'drama'} className="w-3">Drama</option>
-                            <option value={'media'} className="w-3">Media</option>
-                            <option value={'music'} className="w-3">Music</option>
-                            <option value={'hoat'} className="w-3">Host</option>
+                    <select ref={option} className="w-full overflow-hidden p-2 bg-gray-200 rounded-md text-base font-medium text-gray-500">
+                            <option value={'None'} className="w-3 absolute">None</option>
+                            <option value={'Drama'} className="w-3">Drama</option>
+                            <option value={'Media'} className="w-3">Media</option>
+                            <option value={'Music'} className="w-3">Music</option>
+                            <option value={'Host'} className="w-3">Host</option>
                     </select>
             </div>
             <Link href={'/dashboard'}>
-                <button onClick={setUserDepartment} className="bg-green-700 text-white font-medium px-5 py-1 rounded-lg cursor-pointer" type="">Done</button>
+                <button onClick={userDepartment} className="bg-green-700 text-white font-medium px-5 py-1 rounded-lg cursor-pointer" type="">Done</button>
             </Link>
         </div>
     );

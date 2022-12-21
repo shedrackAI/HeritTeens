@@ -14,7 +14,7 @@ function UserDetails() {
             <div className='flex flex-col space-y-2 p-3'>
                 <h2 className='font-normal text-gray-500 flex space-x-2'>
                     <HiOutlineUserGroup aria-hidden='true' size={19}/>
-                    <span className='font-medium text-gray-700 text-sm'> Drama</span>
+                    <span className='font-medium text-gray-700 text-sm'> {user.userDepartment}</span>
                 </h2>
                 <h2 className='font-normal text-gray-500 flex space-x-2'>
                     <BsGenderAmbiguous aria-hidden='true' size={19}/>

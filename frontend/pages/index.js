@@ -3,7 +3,6 @@ import { useContext, useEffect, useState } from 'react'
 
 import Welcome from '../components/Welcome'
 import { AppContext } from '../contexts/AppContext';
-import Dashboard from './dashboard';
 import Register from './register';
 
 export default function Home() {
@@ -23,12 +22,6 @@ export default function Home() {
         ):(
           <Register />
         )}
-
-        {/* <div className={completeOnBoarding  ? 'w-full h-full overflow-hidden' : 'hidden'}>
-          {completeOnBoarding && (
-            <Dashboard />
-          )}
-        </div> */}
 
       </main>
     </div>
