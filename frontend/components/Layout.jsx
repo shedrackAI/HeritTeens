@@ -8,7 +8,7 @@ import { BsEmojiWink } from 'react-icons/bs'
 import BottomPopup from "./BottomPopup";
 
 function Layout({ children }) {
-    const { header, welcomeAnimation } = useContext(AppContext);
+    const { header, welcomeAnimation, bottomPopup, setBottomPopup } = useContext(AppContext);
 
     return (
         <div className="w-screen h-screen flex flex-col items-center justify-center relative overflow-x-hidden overflow-y-scroll">
@@ -25,17 +25,9 @@ function Layout({ children }) {
             </main>
 
 
-            
-            {/* Settings
-            {bottomPopup === "settings" ? (
-                <BottomPopup title={'Settings'} cancleBtnTitle='Cancle' submitBtnTitle='Apply'>
-                    <form action="#" method="post" className="bg-red-200 w-full p-3">
-                        <input type="text" placeholder="Fullname..."/>
-                    </form>
-                </BottomPopup>
-            ):""} */}
-
-
+            {bottomPopup.show && (
+               <BottomPopup />
+            )}
 
 
             {!welcomeAnimation && (

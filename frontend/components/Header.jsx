@@ -50,7 +50,7 @@ function Header() {
         {currentPage === "profile" ? (
           <div className='w-full h-full flex justify-center items-center relative'>
             <h3 className='font-medium text-lg'>profile</h3>
-            <RiSettings2Line onClick={() => setBottomPopup('settings')} aria-hidden='true' size={25} className='absolute right-0 cursor-pointer'/>
+            <RiSettings2Line onClick={() => setBottomPopup({show: true, page: "settings"})} aria-hidden='true' size={25} className='absolute right-0 cursor-pointer'/>
           </div>
         ):''}
         {currentPage === "games" ? (

@@ -9,7 +9,7 @@ export const AppProvider = ({ children }) => {
     const [ completeOnBoarding, setCompleteOnBoarding ] = useState(false);
     const [ isLoading, setIsLoading ] = useState(true);
     const [ welcomeAnimation, setWelcomeAnimation ] = useState(true);
-    const [ bottomPopup, setBottomPopup ] = useState('');
+    const [ bottomPopup, setBottomPopup ] = useState({page: "", show: false});
 
     // User details
     const [ userFullname, setUserFullname ] = useState('');

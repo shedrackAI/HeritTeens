@@ -13,10 +13,12 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  transition: all 0.4s ease;
 }
 
 .setting_container {
  background-color: rgba(0, 0, 0, 0.445);
+ transition: all 0.4s ease;
 }
 
 @font-face {
