@@ -54,13 +54,13 @@ function Header() {
           </div>
         ):''}
         {currentPage === "games" ? (
-          <div className='w-full h-full flex justify-center items-center'>
+          <div className='w-full h-full flex justify-center items-center relative'>
             <FaArrowLeft aria-hidden='true' className='absolute left-0 cursor-pointer ml-5'/> 
             <h3 className='font-medium text-lg'>Games</h3>
           </div>
         ):''}
         {currentPage === "friends" ? (
-          <div className='w-full h-full flex justify-center items-center'>
+          <div className='w-full h-full flex justify-center items-center relative'>
             <Link href={'/account'} className='absolute left-0 cursor-pointer ml-5'>
               <FaArrowLeft aria-hidden='true' onClick={() => setCurrentPage('profile')}/> 
             </Link>
