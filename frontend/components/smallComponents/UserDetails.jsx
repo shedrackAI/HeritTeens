@@ -25,17 +25,17 @@ function UserDetails() {
                     <span className='font-medium text-gray-700 text-sm'> HillTop</span>
                 </h2>
                 <h2 className='font-normal text-gray-500 flex space-x-2'>
-                    <span className='font-medium text-gray-700 text-sm'> <span className='text-gray-500'>Member:</span> {user.userIsMember}</span>
+                    <h1 className='font-medium text-gray-700 text-sm'> <span className='text-gray-500'>Member:</span> {user.userIsMember}</h1>
                 </h2>
             </div>
-            {/* Level container */}
+           
             <div className='flex max-w-xl flex-col items-center border-x-4 border-white p-3'>
                 <h1 className='font-medium text-gray-700 text-sm'>Level</h1>
                 <p className='text-[12px]'>10</p>
             </div>
-            {/* Bio details container */}
+            
             <div className='flex-1 flex max-w-xl flex-col items-center p-3'>
-                <p className='text-[12px]'>Hi my name is shedrack i'm from hilltop branch</p>
+                <p className='text-[12px]'>Hi my name is shedrack im from hilltop branch</p>
             </div>
         </div>
     </div>

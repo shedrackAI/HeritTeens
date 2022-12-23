@@ -25,6 +25,7 @@ app.use((req, res, next) => {
 // Route Middlewares
 app.use('/api/auth', require('./server/routes/authRoute'));
 app.use('/api/user', require('./server/routes/userRoute'));
+app.use('/api/posts', require('./server/routes/postRoute'));
 
 // Start the server
 app.listen(PORT, () => {
