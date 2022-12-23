@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs');
 const User = require('../models/UserModel');
 
 // Register a new user
@@ -9,11 +10,15 @@ const register = async (req, res) => {
     const usernameExit = await User.findOne({ username });
     if (usernameExit) return res.status(400).send("username already taken");
 
+    //Hashing the user password
+    const salt = await bcrypt.genSalt(10)
+    const hashedPassword = await bcrypt.hash(password, salt);
+
     // Create a new user
     const user = new User({
         username,
         fullname,
-        password,
+        password: hashedPassword,
         gender,
         member,
         department,
@@ -39,7 +44,10 @@ const login = async (req, res) => {
          // Check if username exit
         const user = await User.findOne({ username });
         if (!user) return res.status(404).send("user not found");
-        if (password != user.password) return res.status(400).send("Incorrect password");
+
+        const checkPassword = await bcrypt.compare(password, user.password);
+        if (!checkPassword) return res.status(400).send("Incorrect password");
+
         res.status(200).json(user);
      } catch (error) {
         res.status(500).json({error: error.message});

@@ -51,7 +51,61 @@ const deleteUser = async (req, res) => {
     }
 }
 
+// Get a sigle user
+const getUser = async (req, res) => {
+    // Get id from the request req.params
+    const { id } = req.params; 
+
+    try {
+        const user = await User.findById(id);
+        const {password, updatedAt, ...other} = user._doc;
+        return res.status(200).json(other);
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
+}
+
+// Get all the users
+const getAllUser  = async (req, res) => {
+    User.find()
+    .then(data => {
+        res.status(200).json(data)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
+// Add a user as friend
+const sendFriendRequest = async (req, res) => {
+   // Get all the user details from the request Body
+   let { userId } = req.body; 
+   const { id } = req.params; 
+
+   if( userId !== id ) {
+       try {
+            const user = await User.findById(id);
+            const currentUser = await User.findById(userId);
+            
+            if (!user.frends.includes(userId)) {
+                await user.updateOne({$push: {friends: userId}});
+                await currentUser.updateOne({$push: {friends: userId}});
+                res.status(200).json({message: "user has been added as friend"});
+            } else {
+                res.status(403).json({message: "You are already friends"});
+            }
+       } catch (error) { 
+           return res.status(500).json(error.message);
+       }
+   } else {
+       res.status(403).json({message: "You can't follow yourself"});
+   }
+}
+
 module.exports = {
     update,
-    deleteUser
+    deleteUser,
+    getUser,
+    sendFriendRequest,
+    getAllUser
 }
