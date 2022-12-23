@@ -82,12 +82,16 @@ const sendFriendRequest = async (req, res) => {
    let { userId } = req.body; 
    const { id } = req.params; 
 
+   // Checking if users try to send a request to them self
    if( userId !== id ) {
+
+        // Sending a friend request to the user
        try {
             const user = await User.findById(id);
             const currentUser = await User.findById(userId);
             
-            if (!user.frends.includes(userId)) {
+            // Checking if the users are already friends 
+            if (!user.friends.includes(userId)) {
                 await user.updateOne({$push: {friends: userId}});
                 await currentUser.updateOne({$push: {friends: userId}});
                 res.status(200).json({message: "user has been added as friend"});
