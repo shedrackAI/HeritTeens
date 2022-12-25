@@ -8,7 +8,7 @@ function Navbar() {
   const { setCurrentPage } = useContext(AppContext);
 
   return (
-    <div className='flex p-3 justify-center w-full bg-white'>
+    <div className='flex p-3 justify-center w-full bg-white absolute bottom-0'>
         <div className='flex justify-between flex-1 max-w-[550px]'>
             <Link href={"/dashboard"} onClick={() => setCurrentPage('dashboard')}> <HiOutlineHome aria-hidden='true' size={25}/> </Link>
             <Link href={"/games"} onClick={() => setCurrentPage('games')}> <IoGameControllerOutline aria-hidden='true'size={25}/> </Link>

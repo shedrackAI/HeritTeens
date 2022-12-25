@@ -3,7 +3,7 @@ const Post = require('../models/PostModel');
 
 // Create a post
 const createPost = async (req, res) => {
-   const newPost = new Post(req.body)
+   const newPost = new Post(req.body);
 
    try {
         const savedPost = await newPost.save();

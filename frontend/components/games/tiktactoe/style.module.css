@@ -1,0 +1,119 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 6rem);
+  place-items: center;
+  justify-content: center;
+  font-family: poppins;
+}
+
+.box {
+  display: grid;
+  place-items: center;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10%;
+  box-shadow: 0px 0px 8px #888888;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 2em;
+  font-family: "poppins";
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+.boxo {
+  display: grid;
+  place-items: center;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10%;
+  box-shadow: 0px 0px 8px #888888;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 2em;
+  font-family: "poppins";
+  font-weight: bold;
+  margin: 0.5rem;
+  color: rgb(255, 70, 37);
+}
+
+.boxx {
+  display: grid;
+  place-items: center;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10%;
+  box-shadow: 0px 0px 8px #888888;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 2em;
+  font-family: "poppins";
+  font-weight: bold;
+  margin: 0.5rem;
+  color: rgb(44, 135, 255);
+}
+
+.x {
+  color: rgb(255, 70, 37);
+}
+
+.o {
+  color: rgb(44, 135, 255);
+}
+
+.box:hover {
+  box-shadow: 0px 0px 15px #888888;
+}
+
+.reset_btn {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: rgb(0, 110, 255);
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  margin: 2rem auto;
+  display: block;
+}
+
+.reset-btn:hover {
+  background-color: rgb(0, 119, 255);
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  background-color: white;
+  margin: 3rem auto;
+  box-shadow: 0px 0px 8px #888888;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.score {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0rem;
+}
+
+.x_score {
+  color: rgb(255, 70, 37);
+  border-bottom: 5px solid rgb(255, 70, 37);
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+
+.o_score {
+  color: rgb(44, 135, 255);
+  border-bottom: 5px solid rgb(44, 135, 255);
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+
+.inactive {
+  border-bottom: 5px solid transparent;
+}
