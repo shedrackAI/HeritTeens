@@ -15,14 +15,22 @@ import UserDetails from '../components/smallComponents/UserDetails'
 import ProfilePicture from '../components/smallComponents/ProfilePicture'
 import { AppContext } from '../contexts/AppContext'
 import Friends from './friends'
+import { RiSettings2Line } from 'react-icons/ri'
 
 function Account() {
-  const { user, currentPage } = useContext(AppContext);
+  const { user, currentPage, setBottomPopup } = useContext(AppContext);
 
   return (
-    <div className='flex flex-col items-center h-full w-full font-poppins pt-3 px-3 overflow-y-scroll'>
-      
-        <div>
+    <div className='flex flex-col items-center h-full w-full font-poppins px-3 overflow-y-scroll'>
+
+       <nav className='flex justify-between items-center px-5 flex-1 max-w-[550px] w-full h-12 fixed bg-white z-40 border-2'>
+          <div className='w-full h-full flex justify-between items-center'>
+            <h3 className='font-bold text-lg'>Heritteens</h3>
+            <RiSettings2Line onClick={() => setBottomPopup({show: true, page: "settings"})} aria-hidden='true' size={25} className='cursor-pointer'/>
+          </div>
+      </nav>
+
+        <div className='mt-16'>
           {/* First Div for profile picture and details */}
           <div className='w-full flex flex-col'>
               <div className='text-center flex flex-col items-center'>

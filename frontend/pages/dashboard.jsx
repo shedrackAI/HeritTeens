@@ -7,10 +7,11 @@ import post2 from '../public/images/post2.jpg';
 import { RiChatSmile3Line } from 'react-icons/ri';
 
 export function WelcomeAnimation({ style }) {
+  const { user } = useContext(AppContext);
   return (
     <div className={style}>
       <div className='welcome_animation'></div>
-      <h1 className='font-poppins text-xl font-bold text-green-600'>Well Done!!</h1>
+      <h1 className='font-poppins text-xl font-bold text-green-600'>{user.userFullname} you are Welcome </h1>
     </div>
   )
 }
@@ -30,7 +31,7 @@ function Dashboard() {
     <div className='flex flex-col items-center w-full h-full relative  overflow-y-scroll overflow-x-hidden'>
      
      {/* <div className='flex justify-center max-w-[550px] w-full'> */}
-      <nav className='flex justify-between items-center px-5 flex-1 max-w-[550px] w-full h-12 fixed bg-white z-40'>
+      <nav className='flex justify-between items-center px-5 flex-1 max-w-[550px] w-full h-12 fixed bg-white z-40 border-b-2'>
           <div className='w-full h-full flex justify-between items-center'>
             <h3 className='font-bold  text-lg'>Heritteens</h3>
             <RiChatSmile3Line  size={25}/>

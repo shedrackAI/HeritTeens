@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
 
 import { Board } from "./components/Board";
 import { ResetButton } from "./components/ResetButton";
@@ -73,7 +74,13 @@ const TicTacToe = () => {
   }
 
   return (
-    <div className={styles.App}>
+    <div className='h-full w-full bg-red-200'>
+       {/* <nav className='flex justify-between items-center px-5 flex-1 max-w-[550px] w-full h-12 fixed bg-white z-40 border-b-2'>
+          <div className='w-full h-full flex justify-center items-center relative'>
+            <FaArrowLeft aria-hidden='true' className='absolute left-0 cursor-pointer ml-5'/> 
+            <h3 className='font-medium text-lg'>Tic Tac Toe</h3>
+          </div>
+      </nav> */}
       <ScoreBoard scores={scores} xPlaying={xPlaying} />
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
       <ResetButton resetBoard={resetBoard} />

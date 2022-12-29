@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { AiOutlineComment, AiOutlinePushpin } from 'react-icons/ai';
 import { BsThreeDots } from 'react-icons/bs'
 import { FiEdit } from 'react-icons/fi';
-import { HiOutlinePhotograph } from 'react-icons/hi';
+import { HiOutlineBookmark } from 'react-icons/hi';
 import { 
     RiDeleteBin6Line, 
     RiEmotionHappyLine, 
@@ -12,7 +12,8 @@ import {
     RiHeart2Line, 
     RiNotification2Line, 
     RiSendPlane2Line, 
-    RiShareForwardLine 
+    RiShareForwardLine,
+    RiBookmark3Line
 } from 'react-icons/ri';
 
 import ProfilePicture from './ProfilePicture'
@@ -64,20 +65,21 @@ function PostCard({image}) {
                 />
             </div>
         </div>
-        <div className='list-none flex flex-1 px-3'>
+        <div className='list-none flex flex-1 px-3 justify-between'>
             <div className='flex space-x-2'>
                 <li className='flex items-center font-medium'><RiHeart2Line size={23}/></li>
                 <li className='flex items-center justify-center font-medium'><AiOutlineComment size={23}/></li>
                 <li className='flex items-center font-medium'><RiShareForwardLine size={23}/></li>
             </div>
-            <div className='flex space-x-4 font-medium small-phone:text-[14px] text-[10px] flex-1 justify-end'>
+            <HiOutlineBookmark size={23}/>
+        </div>
+
+        <div className='flex items-center px-3 text-gray-500'>
+           <h1 className='font-semibold text-[14px]'>2 Likes</h1>
+           <div className='flex space-x-4 font-medium small-phone:text-[14px] text-[10px] flex-1 justify-end'>
                 <h1> 3 Comments</h1>
                 <h1> 13 Shares</h1>
             </div>
-        </div>
-
-        <div className='flex items-center px-3'>
-           <h1 className='font-semibold'>2 Likes</h1>
         </div>
 
         <div className='px-3'>
